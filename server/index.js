@@ -14,13 +14,13 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: "*",
+    origin: process.env.CLIENT_URL,
   },
 });
 
 app.use(
   cors({
-    origin: "*",
+    origin: process.env.CLIENT_URL,
   })
 );
 app.use(express.json());
